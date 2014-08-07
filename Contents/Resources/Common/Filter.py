@@ -16,7 +16,7 @@ def ParsePlexIgnore(file, plexignore_files, plexignore_dirs, require_exact_path)
           plexignore_files.append(fnmatch.translate(pattern))
         else:
           # Match directories using glob.  Leading slashes screw things up;
-            # these should always be relative to the .plexignore file.
+          # these should always be relative to the .plexignore file.
           if pattern.strip()[0] != '/':
             if require_exact_path:
               plexignore_dirs.append(os.path.join(os.path.dirname(file),pattern))
